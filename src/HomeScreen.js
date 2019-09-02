@@ -8,6 +8,7 @@
 
 import React, {Fragment} from 'react';
 import {
+  Button,
   SafeAreaView,
   StyleSheet,
   ScrollView,
@@ -18,13 +19,12 @@ import {
 
 import {
   Header,
-  LearnMoreLinks,
   Colors,
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -40,13 +40,6 @@ const HomeScreen = () => {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step 1</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.js</Text> to change this
-                screen and then come back to see your edits.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
               <Text style={styles.sectionDescription}>
                 <ReloadInstructions />
@@ -59,17 +52,20 @@ const HomeScreen = () => {
               </Text>
             </View>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
+              <Button
+                  title="Go to dynamic data page"
+                  onPress={() => navigation.navigate('Dynamic')}
+              />
             </View>
-            <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
     </Fragment>
   );
+};
+
+HomeScreen.navigationOptions = {
+  title: 'Home',
 };
 
 const styles = StyleSheet.create({
