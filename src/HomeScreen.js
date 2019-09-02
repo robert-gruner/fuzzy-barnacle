@@ -1,5 +1,5 @@
 /**
- * Sample React Native App
+ * Sample React Native HomeScreen
  * https://github.com/facebook/react-native
  *
  * @format
@@ -24,7 +24,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const App = () => {
+const HomeScreen = () => {
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -111,4 +111,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default HomeScreen;
