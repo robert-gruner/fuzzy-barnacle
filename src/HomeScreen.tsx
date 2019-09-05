@@ -16,7 +16,7 @@ import {
   Text,
   StatusBar,
 } from 'react-native';
-
+import { NavigationScreenComponent } from 'react-navigation';
 import {
   Header,
   Colors,
@@ -24,7 +24,9 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen: NavigationScreenComponent = ({ navigation }) => {
+  const usingHermes = typeof HermesInternal === 'object' && HermesInternal !== null;
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -33,10 +35,10 @@ const HomeScreen = ({ navigation }) => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Hermes</Text>
-            </View>
+          {!usingHermes ? null : (
+              <View style={styles.engine}>
+                <Text style={styles.footer}>Engine: Hermes</Text>
+              </View>
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
