@@ -8,8 +8,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "react": "16.8.6",
-    "react-native": "^0.61.0-rc.0",
+    "react": "16.9.0",
+    "react-native": "0.61.2",
     "react-native-gesture-handler": "^1.4.1",
     "react-navigation": "^4.0.0",
     "react-navigation-stack": "^1.5.1",
